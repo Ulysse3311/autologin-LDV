@@ -5,31 +5,31 @@ import time
 import winsound
 import os
 
-# completer avec vos identifiants
+# completer avec vos identifiants :
 mail=""
 mdp=""
 
-#initialisation
+#initialisation :
 driver = webdriver.Chrome()
 driver.get("https://www.leonard-de-vinci.net/")
 
-#login page 1
+#login page 1 :
 id_box = driver.find_element_by_id('login')
 id_box.send_keys(mail)
 suivant_box=driver.find_element_by_id("btn_next")
 suivant_box.click()
-#login page 2
+#login page 2 :
 driver.implicitly_wait(3)
 mdp_box=driver.find_element_by_id("passwordInput")
 mdp_box.send_keys(mdp)
 connexion_box=driver.find_element_by_id("submitButton")
 connexion_box.click()
-#tableau de présence
+#tableau de présence :
 driver.implicitly_wait(3)
 driver.get("https://www.leonard-de-vinci.net/student/presences/")
 driver.implicitly_wait(3)
 
-#attente cours disponible
+#attente cours disponible :
 while True:
     os.system('cls')
     try:
@@ -46,7 +46,7 @@ while True:
 driver.find_element_by_xpath(r"/html/body/div[1]/div/div/div[3]/div[1]/div/div[2]/table/tbody/tr/td[4]/a").click()
 driver.switch_to.window(driver.window_handles[0])
 
-#test appel ouvert
+#test appel ouvert :
 while True:
     os.system('cls')
     try:
